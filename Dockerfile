@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y rsync rdiff-backup curl postgresql-client bc openssh-client btrfs-tools
+RUN apt-get update && apt-get install -y rsync rdiff-backup curl postgresql-client bc openssh-client btrfs-progs
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl && \
